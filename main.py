@@ -7,7 +7,7 @@ def main():
     
     # Download do dataset
     url = "https://drive.google.com/file/d/1YFPo-k9yyzitXp6HTfCfbselD1DUSJ4K/view?usp=drive_link"
-    filename = 'T1/dataset/entrada.txt'
+    filename = 'dataset/entrada.txt'
     download_dataset(url,filename)
 
     # Preencher a matriz de contratos
@@ -18,7 +18,7 @@ def main():
     imprimir_matriz(matriz)
 
     # Exportar a matriz de contratos
-    file_csv = "T1/dataset/contratos_teste.csv"
+    file_csv = "dataset/contratos.csv"
     exportar_csv(matriz, file_csv)
     
 if __name__ == "__main__":
