@@ -18,7 +18,7 @@ def main():
     imprimir_matriz(matriz)
 
     # Exportar a matriz de contratos
-    file_csv = "dataset/contratos.csv"
+    file_csv = "doc/contratos.csv"
     exportar_csv(matriz, file_csv)
     
 if __name__ == "__main__":

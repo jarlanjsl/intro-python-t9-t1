@@ -1,16 +1,15 @@
-import os, csv, gdown
-#from gdown import download
-
+import os, csv
+from gdown import download
+from typing import List, Tuple
 
 # Definir a função download_from_drive
-def download_dataset(url, filename):
+def download_dataset(url: str, filename: str)-> None:
     id_link = url.split('/')[5]
     link = f'https://drive.google.com/uc?id={id_link}'
-    gdown.download(link, filename, quiet=False)
-
+    download(link, filename, quiet=False)
     return None
 
-def preencher_matriz_contratos(filename: str):
+def preencher_matriz_contratos(filename: str) -> Tuple[int, int, float, List[List[List[float]]]]:
     with open(filename, 'r') as arquivo:
         # Ler todas as linhas
         arquivo01 = open(filename,'r')
@@ -41,17 +40,13 @@ def preencher_matriz_contratos(filename: str):
 
     return m, n, t, matriz_contratos  
 
-
-     
-
-def imprimir_matriz(matriz_contratos, k=None):
+def imprimir_matriz(matriz_contratos: List[List[List[float]]]) -> None:
     for linha in matriz_contratos:
         for elemento in linha:
             print(elemento)
         print()
-    return None
 
-def exportar_csv(dados, nome_arquivo):
+def exportar_csv(dados: List[List], nome_arquivo: str) -> None:
     with open(nome_arquivo, mode='w', newline='') as arquivo_csv:
         escreve_csv = csv.writer(arquivo_csv)
         escreve_csv.writerows(dados)
